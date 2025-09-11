@@ -42,7 +42,7 @@ export const Navbar = () => {
             <Sparkles className="h-3 w-3 text-blue-400 absolute -top-1 -right-1 animate-pulse" />
           </div>
           <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent group-hover:drop-shadow-[0_0_15px_rgba(34,211,238,0.8)] transition-all duration-500">
-            percu<span className="text-white">Skan</span>
+            Percu<span className="text-white">skan</span>
           </span>
           <div className="absolute -inset-2 bg-cyan-400/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></div>
         </a>

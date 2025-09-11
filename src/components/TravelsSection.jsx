@@ -93,7 +93,7 @@ const travels = [
     flag: "/flag/italie.jpeg",
     period: "2023",
     description: "Participation à un festival international de percussion.",
-    location: "Rome, Italie",
+    location: "Bologne, Italie",
     highlights: [
       "Performance principale au Festival International des Percussions de Rome",
       "Workshop sur les techniques de percussion méditerranéennes",
@@ -110,6 +110,18 @@ const travels = [
       },
       {
         src: "/voyages/italie/3.jpg",
+        caption: "Rencontre avec le maître percussionniste Andrea Piccioni"
+      },
+         {
+        src: "/voyages/italie/4.jpg",
+        caption: "Rencontre avec le maître percussionniste Andrea Piccioni"
+      },
+            {
+        src: "/voyages/italie/5.jpg",
+        caption: "Rencontre avec le maître percussionniste Andrea Piccioni"
+      },
+            {
+        src: "/voyages/italie/6.jpg",
         caption: "Rencontre avec le maître percussionniste Andrea Piccioni"
       }
     ],
@@ -163,9 +175,7 @@ export const TravelsSection = () => {
           Moments{" "}
           <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
             Forts
-          </span>{" "}
-          des Voyages
-        </motion.h2>
+          </span>        </motion.h2>
         
         <motion.p 
           className="text-gray-300 mb-12 max-w-2xl mx-auto"
