@@ -105,7 +105,7 @@ export const MusicBackground = () => {
 
    
 
-      <style jsx>{`
+      <style>{`
         .particle {
           position: absolute;
           border-radius: 50%;

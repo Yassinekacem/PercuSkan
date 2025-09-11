@@ -1,6 +1,6 @@
 "use client";
 
-import { Drum } from "lucide-react";
+import { Drum, Music, Users, Mic2 } from "lucide-react";
 import { MusicBackground } from "./MusicBackground";
 
 export const HeroSection = () => {
@@ -33,9 +33,25 @@ export const HeroSection = () => {
           </h1>
 
           <div className="relative">
-            <p className="text-xl md:text-2xl text-gray-300 max-w-lg font-light leading-relaxed">
-              Artiste • Percussionniste • Professeur de musique • Performeur live
-            </p>
+            <div className="flex flex-col gap-2 text-lg md:text-xl text-gray-300 max-w-lg font-light">
+              <div className="flex items-center gap-3 py-1">
+                <Music className="h-5 w-5 text-cyan-400" />
+                <span>Artiste</span>
+              </div>
+              <div className="flex items-center gap-3 py-1">
+                <Drum className="h-5 w-5 text-cyan-400" />
+                <span>Percussionniste</span>
+              </div>
+              <div className="flex items-center gap-3 py-1">
+                <Users className="h-5 w-5 text-cyan-400" />
+                <span>Professeur de musique</span>
+              </div>
+              <div className="flex items-center gap-3 py-1">
+                <Mic2 className="h-5 w-5 text-cyan-400" />
+                <span>Performeur live</span>
+              </div>
+            </div>
+            
             <p className="text-cyan-400 text-lg italic mt-4 border-l-4 border-cyan-400 pl-4 py-2">
               &quot;Chaque battement raconte une histoire, chaque rythme exprime une émotion&quot;
             </p>
@@ -83,7 +99,7 @@ export const HeroSection = () => {
             
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src="/skan.jpg"
+                src="https://res.cloudinary.com/dxurewunb/image/upload/v1757611835/nblmy5qocylacwk8hqc7.jpg"
                 alt="Iskandar Ben Amou jouant de la percussion"
                 className="w-80 md:w-[420px] lg:w-[500px] object-cover"
               />
