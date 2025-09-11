@@ -111,8 +111,8 @@ export const Education = () => {
                 <img
                   src={edu.logo}
                   alt={edu.schoolFr}
-                  width={edu.schoolFr.includes("Institut Supérieur de Musique") ? 90 : 70}
-                  height={edu.schoolFr.includes("Institut Supérieur de Musique") ? 90 : 70}
+                  width={edu.schoolFr.includes("Institut Supérieur de Musique") ? 120 : 82}
+                  height={edu.schoolFr.includes("Institut Supérieur de Musique") ? 120 : 82}
                   className="object-cover rounded-full border-2 border-cyan-400 shadow-md"
                 />
               </div>

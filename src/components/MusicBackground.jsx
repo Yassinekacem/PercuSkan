@@ -33,7 +33,7 @@ export const MusicBackground = () => {
   };
 
   const generatePercussionIcons = () => {
-    const count = Math.floor((window.innerWidth * window.innerHeight) / 35000);
+    const count = Math.floor((window.innerWidth * window.innerHeight) / 19000);
     const newIcons = Array.from({ length: count }, (_, i) => {
       const iconType = Math.floor(Math.random() * 2);
       const icons = ['♪', '♫'];

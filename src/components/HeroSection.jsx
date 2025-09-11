@@ -18,10 +18,10 @@ export const HeroSection = () => {
       <div className="container mx-auto px-6 lg:px-12 flex flex-col-reverse md:flex-row items-center justify-between z-10">
         {/* Texte */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-8">
+          {/* Message de bienvenue */}
           <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-            <div className="w-3 h-3 bg-cyan-400 rounded-full"></div>
             <p className="text-lg uppercase tracking-widest text-cyan-400 opacity-90">
-              Maître Percussionniste
+              Bienvenue dans mon univers musical
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export const HeroSection = () => {
                 <span>Performeur live</span>
               </div>
             </div>
-            
+
             <p className="text-cyan-400 text-lg italic mt-4 border-l-4 border-cyan-400 pl-4 py-2">
               &quot;Chaque battement raconte une histoire, chaque rythme exprime une émotion&quot;
             </p>
@@ -93,10 +93,10 @@ export const HeroSection = () => {
           <div className="relative group image-wrapper">
             {/* Cadre dynamique autour de l'image */}
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-cyan-400 to-blue-500 blur-2xl opacity-30 group-hover:opacity-50 transition duration-1000 pulse-slow"></div>
-            
+
             {/* Effet de particules autour du cadre */}
             <div className="absolute -inset-2 rounded-3xl border-2 border-cyan-400/30 ping-slow"></div>
-            
+
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
                 src="https://res.cloudinary.com/dxurewunb/image/upload/v1757611835/nblmy5qocylacwk8hqc7.jpg"

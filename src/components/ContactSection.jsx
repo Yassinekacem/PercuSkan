@@ -1,14 +1,12 @@
 "use client";
 
 import {
+  Facebook,
   Instagram,
-  Linkedin,
   Mail,
   MapPin,
   Phone,
   Send,
-  Twitch,
-  Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -100,18 +98,22 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4">Réseaux sociaux</h4>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <a href="#" target="_blank">
-                  <Linkedin className="text-cyan-400 hover:text-white transition-colors" />
+             
+                <a
+                  href="https://www.facebook.com/iskandar.benamou"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="text-cyan-400 hover:text-white transition-colors" />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitter className="text-cyan-400 hover:text-white transition-colors" />
-                </a>
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.instagram.com/iskander_benamou/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Instagram className="text-cyan-400 hover:text-white transition-colors" />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitch className="text-cyan-400 hover:text-white transition-colors" />
-                </a>
+        
               </div>
             </div>
           </div>
