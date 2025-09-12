@@ -97,13 +97,11 @@ export const MusicBackground = () => {
         </div>
       ))}
 
-      {/* Éléments "dum tek" avec animations rythmiques originales */}
-      <div className="dum-tek-pattern">
-        <div className="dum">DUM</div>
-        <div className="tek">TEK</div>
-      </div>
-
-   
+      {/* DUM à gauche */}
+      <div className="dum-left">DUM</div>
+      
+      {/* TEK à droite */}
+      <div className="tek-right">TEK</div>
 
       <style>{`
         .particle {
@@ -119,64 +117,31 @@ export const MusicBackground = () => {
           pointer-events: none;
         }
 
-        .dum-tek-pattern {
+        .dum-left {
           position: absolute;
           bottom: 5%;
-          right: 5%;
-          display: flex;
-          gap: 15px;
-          opacity: 0.2;
+          left: 5%;
+          font-size: 16px;
+          color: rgba(14, 165, 233, 0.4);
+          opacity: 0.1;
           font-family: 'Impact', 'Arial Black', sans-serif;
           font-weight: bold;
-          text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-        }
-
-        .dum {
-          font-size: 22px;
-          color: rgba(14, 165, 233, 0.8);
+          text-shadow: 0 0 8px rgba(14, 165, 233, 0.3);
           animation: dum-beat 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
 
-        .tek {
-          font-size: 18px;
-          color: rgba(56, 189, 248, 0.8);
+        .tek-right {
+          position: absolute;
+          bottom: 5%;
+          right: 5%;
+          font-size: 14px;
+          color: rgba(56, 189, 248, 0.4);
+          opacity: 0.1;
+          font-family: 'Impact', 'Arial Black', sans-serif;
+          font-weight: bold;
+          text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
           animation: tek-beat 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
           animation-delay: 0.3s;
-        }
-
-        .sound-waves {
-          position: absolute;
-          bottom: 4%;
-          right: 4%;
-          width: 120px;
-          height: 40px;
-          display: flex;
-          align-items: flex-end;
-          gap: 5px;
-          opacity: 0.15;
-        }
-
-        .wave {
-          width: 8px;
-          background: linear-gradient(to top, rgba(56, 189, 248, 0.7), transparent);
-          border-radius: 4px 4px 0 0;
-        }
-
-        .wave-1 {
-          height: 20px;
-          animation: wave-pulse-1 1.5s ease-in-out infinite;
-        }
-
-        .wave-2 {
-          height: 30px;
-          animation: wave-pulse-2 1.5s ease-in-out infinite;
-          animation-delay: 0.2s;
-        }
-
-        .wave-3 {
-          height: 25px;
-          animation: wave-pulse-3 1.5s ease-in-out infinite;
-          animation-delay: 0.4s;
         }
 
         @keyframes float {
@@ -222,57 +187,42 @@ export const MusicBackground = () => {
         @keyframes dum-beat {
           0%, 100% {
             transform: scale(1) translateY(0);
-            opacity: 0.6;
-            text-shadow: 0 0 5px rgba(14, 165, 233, 0.5);
+            opacity: 0.08;
+            text-shadow: 0 0 5px rgba(14, 165, 233, 0.3);
           }
           25% {
-            transform: scale(1.2) translateY(-5px);
-            opacity: 0.9;
-            text-shadow: 0 0 15px rgba(14, 165, 233, 0.8);
+            transform: scale(1.15) translateY(-3px);
+            opacity: 0.15;
+            text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
           }
           50% {
-            transform: scale(1.1) translateY(0);
-            opacity: 0.7;
-            text-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
+            transform: scale(1.05) translateY(0);
+            opacity: 0.1;
+            text-shadow: 0 0 6px rgba(14, 165, 233, 0.4);
           }
           75% {
-            transform: scale(1.15) translateY(-3px);
-            opacity: 0.8;
-            text-shadow: 0 0 12px rgba(14, 165, 233, 0.7);
+            transform: scale(1.1) translateY(-2px);
+            opacity: 0.12;
+            text-shadow: 0 0 8px rgba(14, 165, 233, 0.45);
           }
         }
 
         @keyframes tek-beat {
           0%, 100% {
             transform: scale(1) translateY(0);
-            opacity: 0.6;
-            text-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
+            opacity: 0.08;
+            text-shadow: 0 0 5px rgba(56, 189, 248, 0.3);
           }
           33% {
-            transform: scale(1.15) translateY(-4px);
-            opacity: 0.9;
-            text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+            transform: scale(1.12) translateY(-3px);
+            opacity: 0.15;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
           }
           66% {
-            transform: scale(1.05) translateY(-2px);
-            opacity: 0.7;
-            text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+            transform: scale(1.03) translateY(-1px);
+            opacity: 0.1;
+            text-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
           }
-        }
-
-        @keyframes wave-pulse-1 {
-          0%, 100% { height: 15px; opacity: 0.3; }
-          50% { height: 25px; opacity: 0.6; }
-        }
-
-        @keyframes wave-pulse-2 {
-          0%, 100% { height: 20px; opacity: 0.3; }
-          50% { height: 35px; opacity: 0.6; }
-        }
-
-        @keyframes wave-pulse-3 {
-          0%, 100% { height: 18px; opacity: 0.3; }
-          50% { height: 30px; opacity: 0.6; }
         }
       `}</style>
     </div>

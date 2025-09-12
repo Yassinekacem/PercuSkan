@@ -1,6 +1,7 @@
 "use client";
 
-import { GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react"; 
+
 
 const educationData = [
   {
