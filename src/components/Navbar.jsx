@@ -9,7 +9,9 @@ const navItems = [
   { name: "Éducation", href: "#education" },
   { name: "Instruments", href: "#Instruments" },
   { name: "Tournées", href: "#travels" },
-  { name: "Performances", href: "#projects" },
+  { name: "Performances", href: "#performances" },
+    { name: "Contact", href: "#contact" },
+
 ];
 
 export const Navbar = () => {
