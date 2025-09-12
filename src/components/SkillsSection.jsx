@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { MusicBackground } from "./MusicBackground"; // Import du background animé
+import { Drum } from "lucide-react";
 
 const instruments = [
   // Percussions traditionnelles
@@ -34,9 +35,21 @@ export const SkillsSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-gray-900/90 -z-10 backdrop-blur-sm" />
 
       <div className="container mx-auto max-w-5xl relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Mes <span className="text-cyan-400">Instruments</span>
-        </h2>
+     <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-center">
+  Mes{" "}
+  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
+    Instruments
+  </span>
+  <Drum
+    className="text-cyan-400 hover:rotate-12 hover:scale-110 transition-transform duration-300"
+    size={28} // 👈 réduit en responsive
+  />
+</h2>
+<p className="text-gray-300 mb-12 max-w-2xl mx-auto text-center">
+  Découvrez les instruments traditionnels et modernes qui façonnent mon identité musicale.
+</p>
+
+
 
         {/* Filtre par catégorie */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">

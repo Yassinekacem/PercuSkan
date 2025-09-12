@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import { motion, AnimatePresence } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { MusicBackground } from "./MusicBackground";
-import { X, MapPin, Calendar, Music } from "lucide-react";
+import { X, MapPin, Calendar, Music, Globe } from "lucide-react";
 
 // Données des voyages enrichies
 const travels = [
@@ -15,7 +15,7 @@ const travels = [
     flag: "/flag/senegal.png",
     period: "2021",
     description: "Festival de musique et workshops de percussion.",
-    location: "Saint-Louis, Sénégal",
+    location: "Abidjan, Sénégal",
     highlights: [
       "Masterclass de sabar avec des maîtres percussionnistes",
       "Performances au Festival International de Jazz de Saint-Louis",
@@ -166,16 +166,21 @@ export const TravelsSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-gray-900/90 -z-10 backdrop-blur-sm" />
 
       <div className="container mx-auto max-w-6xl text-center relative z-10">
-        <motion.h2 
-          className="text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-3"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          Moments{" "}
-          <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
-            Forts
-          </span>        </motion.h2>
+     <motion.h2 
+  className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-2 sm:gap-3 flex-wrap text-center"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7 }}
+>
+  Escales{" "}
+  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
+    Musicales
+  </span>
+  <Globe
+    className="text-cyan-400 hover:rotate-12 hover:scale-110 transition-transform duration-300 w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9"
+  />
+</motion.h2>
+
         
         <motion.p 
           className="text-gray-300 mb-12 max-w-2xl mx-auto"

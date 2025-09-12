@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="py-12 px-4 bg-black border-t border-gray-800 flex flex-wrap justify-between items-center">
       <p className="text-sm text-gray-400">
-        &copy; {new Date().getFullYear()} y.kacem. Tous droits réservés.
+        &copy; {new Date().getFullYear()} Tous droits réservés.
       </p>
 
       <a

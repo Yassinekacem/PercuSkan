@@ -1,6 +1,6 @@
 "use client";
 
-import { Drum, Music, Users, Mic2 } from "lucide-react";
+import { Drum, Music, Users, Mic2, Youtube } from "lucide-react";
 import { MusicBackground } from "./MusicBackground";
 
 export const HeroSection = () => {
@@ -72,13 +72,14 @@ export const HeroSection = () => {
 
           {/* Boutons avec effets de survol */}
           <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a
-              href="#performances"
-              className="px-8 py-4 text-lg font-semibold rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black shadow-2xl hover:scale-105 hover:shadow-cyan-400/60 transition-all duration-300 flex items-center gap-2"
-            >
-              <Drum size={20} />
-              <span>Voir mes performances</span>
-            </a>
+        <a
+  href="#performances"
+  className="px-8 py-4 text-lg font-semibold rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black shadow-2xl hover:scale-105 hover:shadow-cyan-400/60 transition-all duration-300 flex items-center justify-center gap-2 text-center"
+>
+  <span className="whitespace-nowrap">Voir mes performances</span> 
+<Youtube />
+</a>
+
             <a
               href="#contact"
               className="px-8 py-4 text-lg font-semibold rounded-full border-2 border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-black transition-all duration-300 hover:scale-105"

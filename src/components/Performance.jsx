@@ -10,7 +10,6 @@ const performancesData = [
     id: 1,
     title: (
       <span>
-        <Music size={22} className="mr-2" />
         <strong>Prestation avec Bouthaina Nabouli</strong>{" "}
         <span role="img" aria-label="love">❤️</span>
       </span>
@@ -25,7 +24,6 @@ const performancesData = [
     id: 2,
     title: (
       <span>
-        <Play size={22} className="mr-2" />
         <strong>Spectacle Rbou5 avec Hatem Lejmi</strong>{" "}
         <span role="img" aria-label="like">❤️</span>
       </span>
@@ -125,16 +123,16 @@ export const Performances = () => {
 
       <div className="container mx-auto max-w-6xl text-center relative z-10">
         {/* Titre */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-3">
-          Mes{" "}
-          <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
-            Performances
-          </span>
-          <Youtube
-            className="text-cyan-400 hover:scale-110 transition-transform duration-300"
-            size={36}
-          />
-        </h2>
+     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-2 sm:gap-3 flex-wrap text-center">
+  Mes{" "}
+  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
+    Performances
+  </span>
+  <Youtube
+    className="text-cyan-400 hover:scale-110 transition-transform duration-300 w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9"
+  />
+</h2>
+
 
         <p className="text-gray-300 mb-12 max-w-2xl mx-auto">
           Découvrez une sélection de mes performances live, capturant l&#39;énergie et la passion de la percussion en action.
