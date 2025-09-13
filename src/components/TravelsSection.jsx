@@ -8,90 +8,39 @@ import { MusicBackground } from "./MusicBackground";
 import { X, MapPin, Calendar, Music } from "lucide-react";
 
 // Données des voyages enrichies
-const travels = [
-  {
-    id: 1,
-    country: "Sénégal",
-    flag: "/flag/senegal.png",
-    period: "2021",
-    description: "Festival de musique et workshops de percussion.",
-    location: "Abidjan, Sénégal",
-    highlights: [
-      "Masterclass de sabar avec des maîtres percussionnistes",
-      "Performances au Festival International de Jazz de Saint-Louis",
-      "Rencontres avec des artistes de la tradition mandingue"
-    ],
-    images: [
-      {
-        src: "/voyages/senegal/1.jpg",
-        caption: "Atelier de percussion avec les étudiants locaux"
-      },
-      {
-        src: "/voyages/senegal/2.jpg",
-        caption: "Performance au coucher du soleil"
-      },
-      {
-        src: "/voyages/senegal/3.jpg",
-        caption: "Rencontre avec le groupe de sabar local"
-      }
-    ],
-  },
-  {
+const travels = [ 
+    {
     id: 2,
     country: "Tanzanie",
     flag: "/flag/zanzibar.png",
-    period: "2022",
+    period: "2025",
     description: "Concerts sur la plage et rencontres avec des artistes locaux.",
-    location: "Stone Town, Zanzibar",
+    location: "Zanzibar,Tanzanie ",
     highlights: [
       "Série de concerts sur les plages de Nungwi et Kendwa",
       "Collaboration avec des musiciens taarab traditionnels",
       "Enregistrement de rythmes swahilis avec des artisans locaux"
     ],
     images: [
-      {
-        src: "/voyages/zanzibar/1.jpg",
-        caption: "Concert au coucher du soleil à Nungwi Beach"
-      },
-      {
-        src: "/voyages/zanzibar/1.2.jpg",
-        caption: "Session d'improvisation avec des musiciens locaux"
-      },
-      {
-        src: "/voyages/zanzibar/1.3.jpg",
-        caption: "Atelier de découverte des percussions swahilies"
-      },
-      {
-        src: "/voyages/zanzibar/2.jpg",
-        caption: "Rencontre avec les artisans de instruments traditionnels"
-      },
-      {
-        src: "/voyages/zanzibar/3.jpg",
-        caption: "Performance lors du Festival Culturel de Zanzibar"
-      },
-      {
-        src: "/voyages/zanzibar/4.jpg",
-        caption: "Exploration des rythmes du tarab"
-      },
-      {
-        src: "/voyages/zanzibar/5.jpg",
-        caption: "Cérémonie de musique et danse traditionnelle"
-      },
-      {
-        src: "/voyages/zanzibar/6.jpg",
-        caption: "Échange culturel avec le groupe de kidumbak"
-      },
-      {
-        src: "/voyages/zanzibar/7.jpg",
-        caption: "Dernière performance devant public international"
-      }
+      "/voyages/zanzibar/1.2.jpg",
+            "/voyages/zanzibar/1.jpg",
+
+      "/voyages/zanzibar/1.3.jpg",
+      "/voyages/zanzibar/2.jpg",
+      "/voyages/zanzibar/3.jpg",
+      "/voyages/zanzibar/4.jpg",
+      "/voyages/zanzibar/5.jpg",
+      "/voyages/zanzibar/6.jpg",
+      "/voyages/zanzibar/7.jpg"
     ],
   },
+
+
   {
     id: 3,
     country: "Italie",
     flag: "/flag/italie.jpeg",
-    period: "2023",
+    period: "2024",
     description: "Participation à un festival international de percussion.",
     location: "Bologne, Italie",
     highlights: [
@@ -100,30 +49,33 @@ const travels = [
       "Collaboration avec l'Orchestre de Percussions de Milan"
     ],
     images: [
-      {
-        src: "/voyages/italie/1.jpg",
-        caption: "Ouverture du festival sur la scène principale"
-      },
-      {
-        src: "/voyages/italie/2.jpg",
-        caption: "Atelier techniques avancées de frame drums"
-      },
-      {
-        src: "/voyages/italie/3.jpg",
-        caption: "Rencontre avec le maître percussionniste Andrea Piccioni"
-      },
-         {
-        src: "/voyages/italie/4.jpg",
-        caption: "Rencontre avec le maître percussionniste Andrea Piccioni"
-      },
-            {
-        src: "/voyages/italie/5.jpg",
-        caption: "Rencontre avec le maître percussionniste Andrea Piccioni"
-      },
-            {
-        src: "/voyages/italie/6.jpg",
-        caption: "Rencontre avec le maître percussionniste Andrea Piccioni"
-      }
+      "/voyages/italie/1.jpg",
+      "/voyages/italie/2.jpg",
+      "/voyages/italie/3.jpg",
+      "/voyages/italie/4.jpg",
+      "/voyages/italie/5.jpg",
+      "/voyages/italie/6.jpg"
+    ],
+  }, 
+    {
+    id: 1,
+    country: "Sénégal",
+    flag: "/flag/senegal.png",
+    period: "2023",
+    description: "Festival de musique et workshops de percussion.",
+    location: "Abidjan, Sénégal",
+    highlights: [
+      "Masterclass de sabar avec des maîtres percussionnistes",
+      "Performances au Festival International de Jazz de Saint-Louis",
+      "Rencontres avec des artistes de la tradition mandingue"
+    ],
+    images: [
+      "/voyages/senegal/1.jpg",
+      "/voyages/senegal/2.jpg",
+      "/voyages/senegal/3.jpg",
+      "/voyages/senegal/4.jpg",
+      "/voyages/senegal/5.jpg",
+      "/voyages/senegal/6.jpg"
     ],
   },
 ];
@@ -264,7 +216,7 @@ export const TravelsSection = () => {
     currentTravel.images.map((image, idx) => (
       <div key={idx} className="h-16 overflow-hidden">
         <img
-          src={image.src}
+          src={image}
           alt={`Thumbnail ${idx + 1}`}
           className="w-full h-full object-cover"
         />
@@ -275,16 +227,10 @@ export const TravelsSection = () => {
   {currentTravel.images.map((image, idx) => (
     <div key={idx} className="flex justify-center">
       <img
-        src={image.src}
+        src={image}
         alt={`${currentTravel.country} ${idx + 1}`}
         className="max-h-[80vh] w-auto object-contain"
       />
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-        <p className="text-white text-sm text-left">{image.caption}</p>
-        <p className="text-cyan-300 text-xs text-left mt-1">
-          {idx + 1} / {currentTravel.images.length}
-        </p>
-      </div>
     </div>
   ))}
 </Carousel>
