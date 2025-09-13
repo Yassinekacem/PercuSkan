@@ -41,7 +41,6 @@
         <div className="container mx-auto max-w-5xl relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center flex items-center justify-center gap-3">
   Contactez <span className="text-cyan-400">Moi</span> 
-    <Send className="w-7 h-7 text-cyan-400" />
 
 </h2>
 

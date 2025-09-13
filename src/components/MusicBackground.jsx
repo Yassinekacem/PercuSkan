@@ -121,7 +121,7 @@ export const MusicBackground = () => {
           position: absolute;
           bottom: 5%;
           left: 5%;
-          font-size: 16px;
+          font-size: 24px;
           color: rgba(14, 165, 233, 0.4);
           opacity: 0.1;
           font-family: 'Impact', 'Arial Black', sans-serif;
@@ -134,7 +134,7 @@ export const MusicBackground = () => {
           position: absolute;
           bottom: 5%;
           right: 5%;
-          font-size: 14px;
+          font-size: 23px;
           color: rgba(56, 189, 248, 0.4);
           opacity: 0.1;
           font-family: 'Impact', 'Arial Black', sans-serif;

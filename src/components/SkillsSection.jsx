@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { MusicBackground } from "./MusicBackground"; // Import du background animé
-import { Drum } from "lucide-react";
 
 const instruments = [
   // Percussions traditionnelles
@@ -14,16 +13,20 @@ const instruments = [
   { name: "Cajón", image: "/instruments/cajon.png", category: "moderne" },
   { name: "Djembe", image: "/instruments/djembe.png", category: "moderne" },
   { name: "Timbales", image: "/instruments/timbales.png", category: "moderne" },
-  { name: "Congas", image: "/instruments/Congas.png", category: "moderne" },
+  { name: "Congas", image: "/instruments/Congas.png", category: "moderne" }, 
+
+
+
+
 ];
 
-const categories = ["all", "traditionnelle", "moderne"];
+const categories = ["tous", "traditionnelle", "moderne"];
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("tous");
 
   const filteredInstruments = instruments.filter(
-    (inst) => activeCategory === "all" || inst.category === activeCategory
+    (inst) => activeCategory === "tous" || inst.category === activeCategory
   );
 
   return (
@@ -40,10 +43,6 @@ export const SkillsSection = () => {
   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
     Instruments
   </span>
-  <Drum
-    className="text-cyan-400 hover:rotate-12 hover:scale-110 transition-transform duration-300"
-    size={28} // 👈 réduit en responsive
-  />
 </h2>
 <p className="text-gray-300 mb-12 max-w-2xl mx-auto text-center">
   Découvrez les instruments traditionnels et modernes qui façonnent mon identité musicale.

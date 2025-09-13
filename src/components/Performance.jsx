@@ -14,10 +14,9 @@ const performancesData = [
         <span role="img" aria-label="love">❤️</span>
       </span>
     ),
-    description: "Une performance de percussion en collaboration avec Bouthaina Nabouli, une artiste à la voix captivante.",
+    description: "Performance de percussions en duo avec Bouthaina Nabouli, une voix remarquable et une belle énergie.",
     videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757620918/downloadgram.org_AQOV-IvKKVBiKL93_AGLcphifJwf10mg1pGLn69iA9bdbrN4RP9ksLLhw3sySC2dcq95LQ5rUQUl1XJH9uQNsG_Z4P8wXCcK2_kkkXY_mogrr3.mp4",
     date: "24 janvier 2024",
-    duration: "4:32",
     venue: "Conservatoire de Musique"
   },
   {
@@ -28,61 +27,106 @@ const performancesData = [
         <span role="img" aria-label="like">❤️</span>
       </span>
     ),
-    description: "Une performance explosive avec Hatem Lejmi, où rythmes et sons se mêlent avec énergie.",
+    description: "Un show percussif avec Hatem Lejmi, rempli de vibes puissantes et d’improvisation enflammée.",
     videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757621112/downloadgram.org_AQMDXfeWW4BHO1Xw4W9VBnEZqB1MObV_T_URBc6lOU-ZOyP_-V8cMij59HiXOMW3gfjfSTGk9UMcFr2aajY3gx5KGy02w-YNeHdOqRw_daukur.mp4",
     date: "31 mars 2024",
-    duration: "6:15",
     venue: "Théâtre Municipal de Tunis"
   }, 
-  
-{
-  id: 5,
+  {
+    id: 5,
+    title: (
+      <span>
+        <strong>Les moments forts de MASREB El HATTAYA</strong>{" "}
+        <span role="img" aria-label="like">❤️</span>
+      </span>
+    ),
+    description: "Un condensé des meilleurs instants de MASREB El HATTAYA, entre rythmes africains et émotions fortes.",
+    videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757624091/downloadgram.org_AQNz5bEORWJNoAf8naAPWBe9wP8O33NApQ9jsEngLfQ-JT2BnxVAQwKMaF26E7Zj5acFf09JwMeyTCubL-lxL4O7MgAGqJEfOEJxKlo_j9njws.mp4",
+    date: "22 avril 2024",
+    venue: "Sénégal"
+  },
+  {
+    id: 3,
+    title: (
+      <span>
+        <strong>Apparition sur Watania 1</strong>{" "}
+        <span role="img" aria-label="laugh">❤️📺</span>
+      </span>
+    ),
+    description: "Une apparition rythmée sur Watania 1, avec un mix live de percussions et de sourires en direct.",
+    videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757715764/77cd71a1-32bf-43f5-831c-b3a4f1883aab_q2zc9q.mp4",
+    date: "1 septembre 2023",
+    venue: "Watania 1"
+  },
+  {
+    id: 8,
+    title: (
+      <span>
+        <strong>Duo de percussion</strong>{" "}
+        <span role="img" aria-label="laugh">❤️</span>
+      </span>
+    ),
+    description: "Un duo improvisé lors d’un cours Brouva, où les baguettes ont dansé comme jamais.",
+    videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757801012/1082ca96-fdb1-44af-80e1-1ab8d8590544_nmzsrn.mp4",
+    date: "1 avril 2025",
+    venue: "Watania 1"
+  }, 
+  {
+  id: 12,
   title: (
     <span>
-      <Play size={22} className="mr-2" />
-      <strong>Les moments forts de MASREB El HATTAYA</strong>{" "}
-      <span role="img" aria-label="like">❤️🇸🇳</span>
+      <strong>Répétitions avant scène</strong>{" "}
+      <span role="img" aria-label="fire">🔥🥁</span>
     </span>
   ),
-  description: "Revivez les moments inoubliables de MASREB El HATTAYA, une performance unique qui a marqué l'histoire musicale du Sénégal.",
-  videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757624091/downloadgram.org_AQNz5bEORWJNoAf8naAPWBe9wP8O33NApQ9jsEngLfQ-JT2BnxVAQwKMaF26E7Zj5acFf09JwMeyTCubL-lxL4O7MgAGqJEfOEJxKlo_j9njws.mp4",
-  date: "22 avril 2024",
-  duration: "6:15",
-  venue: "Sénégal"
-}
-,
-  
-{
-  id: 3,
+  description: "Un duo de percussions en pleine session Brouva, où l’énergie monte en préparation d’un spectacle à venir.",
+  videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757800920/8d9e3c3b-c7f2-46d7-8e13-ee1fd7ff9950_i82hlk.mp4",
+  date: "10 septembre 2024",
+  venue: "Studio Brouva"
+},
+
+  {
+    id: 10,
+    title: (
+      <span>
+        <strong>Festival de Carthage</strong>{" "}
+        <span role="img" aria-label="laugh">❤️</span>
+      </span>
+    ),
+    description: "Un avant-goût du Festival de Carthage, entre répétitions intenses et rythmes endiablés.",
+    videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757800863/a1169f99-459e-473a-853c-62c7dae1a1d6_yfsot8.mp4",
+    date: "1 juin 2024",
+    venue: "Watania 1"
+  },
+  {
+  id: 11,
   title: (
     <span>
-      <Music size={22} className="mr-2" />
-      <strong>Duo avec mon ami Adem Daoud</strong>{" "}
-      <span role="img" aria-label="laugh">❤️😂</span>
+      <strong>Moments avant le show</strong>{" "}
+      <span role="img" aria-label="drum">🥁🎬</span>
     </span>
   ),
-  description: "Un duo explosif avec Adem Daoud, un percussionniste exceptionnel, alliant énergie et complicité.",
-  videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757621380/downloadgram.org_AQPHSuv5uf7IeIJC6pgntwPKcD3XoAgUtlQJN9noyV7Vva7tTHpTee6hzCSaRNf1STyUKiL8AKtSdQ0HwC9k5mhZnSnYK9m837XhB6w_yq14ya.mp4",
-  date: "1 septembre 2021",
-  duration: "8:47",
-  venue: "Ma maison"
+  description: "Coulisses, rires, échauffement et concentration... Un aperçu des instants magiques juste avant de monter sur scène.",
+  videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757715810/455f1faf-816c-4d8e-9a7a-5db7a2a30e8b_ibthdt.mp4",
+  date: "13 septembre 2023",
+  venue: "Backstage – Festival hammamet"
 }
 ,
   {
     id: 4,
     title: (
       <span>
-        <strong>Enfance (Premiers pas avec la Darbouka )</strong>{" "}
+        <strong>Enfance (Premiers pas avec la Darbouka)</strong>{" "}
         <span role="img" aria-label="laugh">😂😂</span>
       </span>
     ),
-    description: "Les débuts d'un percussionniste avec la darbouka, une performance pleine de rires et de découvertes musicales.",
+    description: "Un retour aux débuts, quand taper sur une darbouka rimait avec fous rires et innocence musicale.",
     videoUrl: "https://res.cloudinary.com/dl2dyrppv/video/upload/v1757621519/AQMo_TMCZRWUfUOQ8t-vdGg0aL7qX4guLFNAbiOe4xA26P1LG4hacyebOTrD0b4GD0kld3xhN3_apRyQ3s2q6Hz7_ngqkwo.mp4",
-    date: "12 Novembre 2015",
-    duration: "5:23",
+    date: "12 novembre 2015",
     venue: "Ma maison"
-  }
+  },
 ];
+
 
 
 export const Performances = () => {
@@ -128,9 +172,7 @@ export const Performances = () => {
   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
     Performances
   </span>
-  <Youtube
-    className="text-cyan-400 hover:scale-110 transition-transform duration-300 w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9"
-  />
+
 </h2>
 
 

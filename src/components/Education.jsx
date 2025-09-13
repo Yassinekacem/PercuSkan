@@ -1,6 +1,5 @@
 "use client";
 
-import { GraduationCap } from "lucide-react"; 
 
 
 const educationData = [
@@ -88,10 +87,7 @@ export const Education = () => {
           <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
             Éducation
           </span>
-          <GraduationCap
-            className="text-cyan-400 hover:rotate-12 hover:scale-110 transition-transform duration-300"
-            size={36}
-          />
+      
         </h2>
 
         <p className="text-gray-300 mb-12 max-w-2xl mx-auto">

@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import { motion, AnimatePresence } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { MusicBackground } from "./MusicBackground";
-import { X, MapPin, Calendar, Music, Globe } from "lucide-react";
+import { X, MapPin, Calendar, Music } from "lucide-react";
 
 // Données des voyages enrichies
 const travels = [
@@ -176,9 +176,7 @@ export const TravelsSection = () => {
   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
     Musicales
   </span>
-  <Globe
-    className="text-cyan-400 hover:rotate-12 hover:scale-110 transition-transform duration-300 w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9"
-  />
+
 </motion.h2>
 
         
