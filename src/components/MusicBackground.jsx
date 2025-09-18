@@ -117,32 +117,33 @@ export const MusicBackground = () => {
           pointer-events: none;
         }
 
-        .dum-left {
-          position: absolute;
-          bottom: 5%;
-          left: 5%;
-          font-size: 24px;
-          color: rgba(14, 165, 233, 0.4);
-          opacity: 0.1;
-          font-family: 'Impact', 'Arial Black', sans-serif;
-          font-weight: bold;
-          text-shadow: 0 0 8px rgba(14, 165, 233, 0.3);
-          animation: dum-beat 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        }
+       .dum-left {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  font-size: 24px;
+  color: rgba(14, 165, 233, 0.4); /* bleu existant */
+  opacity: 0.1;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(14, 165, 233, 0.3);
+  animation: dum-beat 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
 
-        .tek-right {
-          position: absolute;
-          bottom: 5%;
-          right: 5%;
-          font-size: 23px;
-          color: rgba(56, 189, 248, 0.4);
-          opacity: 0.1;
-          font-family: 'Impact', 'Arial Black', sans-serif;
-          font-weight: bold;
-          text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
-          animation: tek-beat 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          animation-delay: 0.3s;
-        }
+.tek-right {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  font-size: 23px;
+  color: #f97316; /* orange-500 */
+  opacity: 0.1;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(249, 115, 22, 0.3); /* orange-500 avec opacité */
+  animation: tek-beat 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 0.3s;
+}
+
 
         @keyframes float {
           0% {

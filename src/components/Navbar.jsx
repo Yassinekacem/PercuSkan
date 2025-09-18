@@ -10,8 +10,7 @@ const navItems = [
   { name: "Instruments", href: "#Instruments" },
   { name: "Tournées", href: "#travels" },
   { name: "Performances", href: "#performances" },
-    { name: "Contact", href: "#contact" },
-
+  { name: "Contact", href: "#contact" },
 ];
 
 export const Navbar = () => {
@@ -41,12 +40,12 @@ export const Navbar = () => {
         >
           <div className="relative">
             <Drum className="h-7 w-7 text-cyan-400 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]" />
-            <Sparkles className="h-3 w-3 text-blue-400 absolute -top-1 -right-1 animate-pulse" />
+            <Sparkles className="h-3 w-3 text-orange-400 absolute -top-1 -right-1 animate-pulse" />
           </div>
-          <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent group-hover:drop-shadow-[0_0_15px_rgba(34,211,238,0.8)] transition-all duration-500">
+          <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-400 bg-clip-text text-transparent group-hover:drop-shadow-[0_0_15px_rgba(251,146,60,0.8)] transition-all duration-500">
             Percu<span className="text-white">skan</span>
           </span>
-          <div className="absolute -inset-2 bg-cyan-400/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></div>
+          <div className="absolute -inset-2 bg-orange-400/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></div>
         </a>
 
         {/* Desktop navigation */}
@@ -55,20 +54,16 @@ export const Navbar = () => {
             <a
               key={key}
               href={item.href}
-              className="relative text-gray-200 hover:text-cyan-400 transition-colors duration-300 group"
+              className="relative text-gray-200 hover:text-orange-400 transition-colors duration-300 group"
             >
               {item.name}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-400 transition-all group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-orange-400 transition-all group-hover:w-full"></span>
             </a>
           ))}
-          {/* Theme toggle on desktop */}
         </div>
 
         {/* Mobile buttons */}
         <div className="md:hidden flex items-center space-x-2">
-          {/* Theme toggle on mobile */}
-
-          {/* Menu button */}
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
             className="p-2 text-gray-200 z-50"
@@ -92,7 +87,7 @@ export const Navbar = () => {
               <a
                 key={key}
                 href={item.href}
-                className="text-gray-200 hover:text-cyan-400 transition-colors duration-300"
+                className="text-gray-200 hover:text-orange-400 transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
