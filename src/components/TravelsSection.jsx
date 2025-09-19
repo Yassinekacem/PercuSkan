@@ -118,18 +118,12 @@ export const TravelsSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-gray-900/90 -z-10 backdrop-blur-sm" />
 
       <div className="container mx-auto max-w-6xl text-center relative z-10">
-     <motion.h2 
-  className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-2 sm:gap-3 flex-wrap text-center"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7 }}
->
-  Escales{" "}
-  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
-    Musicales
-  </span>
-
-</motion.h2>
+  <h2 className="text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-3">
+          Escales{" "}
+          <span className="bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent animate-gradient">
+            Musicales
+          </span>
+        </h2>
 
         
         <motion.p 

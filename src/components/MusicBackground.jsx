@@ -33,16 +33,26 @@ export const MusicBackground = () => {
   };
 
   const generatePercussionIcons = () => {
-    const count = Math.floor((window.innerWidth * window.innerHeight) / 30000);
+    const count = Math.floor((window.innerWidth * window.innerHeight) / 20000);
     const newIcons = Array.from({ length: count }, (_, i) => {
       const iconType = Math.floor(Math.random() * 2);
       const icons = ['♪', '♫'];
-      const colors = [
-        'rgba(56, 189, 248, 0.4)', // cyan-400
-        'rgba(14, 165, 233, 0.4)', // sky-500
-        'rgba(2, 132, 199, 0.4)',  // blue-600
-        'rgba(3, 105, 161, 0.4)'   // blue-700
-      ];
+      const beatPattern = iconType === 0 ? 'dum' : 'tek';
+      
+      // Couleurs différentes selon le type d'icône
+      const colors = beatPattern === 'dum' 
+        ? [
+            'rgba(56, 189, 248, 0.4)', // cyan-400
+            'rgba(14, 165, 233, 0.4)', // sky-500
+            'rgba(2, 132, 199, 0.4)',  // blue-600
+            'rgba(3, 105, 161, 0.4)'   // blue-700
+          ]
+        : [
+            'rgba(249, 115, 22, 0.4)', // orange-500
+            'rgba(251, 146, 60, 0.4)', // orange-400
+            'rgba(234, 88, 12, 0.4)',  // orange-600
+            'rgba(194, 65, 12, 0.4)'   // orange-700
+          ];
       
       return {
         id: i,
@@ -54,7 +64,7 @@ export const MusicBackground = () => {
         color: colors[Math.floor(Math.random() * colors.length)],
         size: Math.random() * 16 + 12,
         delay: Math.random() * 2,
-        beatPattern: Math.random() > 0.5 ? 'dum' : 'tek'
+        beatPattern: beatPattern
       };
     });
     setPercussionIcons(newIcons);
@@ -117,33 +127,32 @@ export const MusicBackground = () => {
           pointer-events: none;
         }
 
-       .dum-left {
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-  font-size: 24px;
-  color: rgba(14, 165, 233, 0.4); /* bleu existant */
-  opacity: 0.1;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  font-weight: bold;
-  text-shadow: 0 0 8px rgba(14, 165, 233, 0.3);
-  animation: dum-beat 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
+        .dum-left {
+          position: absolute;
+          bottom: 5%;
+          left: 5%;
+          font-size: 24px;
+          color: rgba(14, 165, 233, 0.4); /* bleu existant */
+          opacity: 0.1;
+          font-family: 'Impact', 'Arial Black', sans-serif;
+          font-weight: bold;
+          text-shadow: 0 0 8px rgba(14, 165, 233, 0.3);
+          animation: dum-beat 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
 
-.tek-right {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  font-size: 23px;
-  color: #f97316; /* orange-500 */
-  opacity: 0.1;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  font-weight: bold;
-  text-shadow: 0 0 8px rgba(249, 115, 22, 0.3); /* orange-500 avec opacité */
-  animation: tek-beat 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  animation-delay: 0.3s;
-}
-
+        .tek-right {
+          position: absolute;
+          bottom: 5%;
+          right: 5%;
+          font-size: 23px;
+          color: #f97316; /* orange-500 */
+          opacity: 0.1;
+          font-family: 'Impact', 'Arial Black', sans-serif;
+          font-weight: bold;
+          text-shadow: 0 0 8px rgba(249, 115, 22, 0.3); /* orange-500 avec opacité */
+          animation: tek-beat 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          animation-delay: 0.3s;
+        }
 
         @keyframes float {
           0% {
@@ -212,17 +221,17 @@ export const MusicBackground = () => {
           0%, 100% {
             transform: scale(1) translateY(0);
             opacity: 0.08;
-            text-shadow: 0 0 5px rgba(56, 189, 248, 0.3);
+            text-shadow: 0 0 5px rgba(249, 115, 22, 0.3);
           }
           33% {
             transform: scale(1.12) translateY(-3px);
             opacity: 0.15;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+            text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
           }
           66% {
             transform: scale(1.03) translateY(-1px);
             opacity: 0.1;
-            text-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
+            text-shadow: 0 0 6px rgba(249, 115, 22, 0.4);
           }
         }
       `}</style>

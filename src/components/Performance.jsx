@@ -167,13 +167,12 @@ export const Performances = () => {
 
       <div className="container mx-auto max-w-6xl text-center relative z-10">
         {/* Titre */}
-     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-2 sm:gap-3 flex-wrap text-center">
-  Mes{" "}
-  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
-    Performances
-  </span>
-
-</h2>
+  <h2 className="text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-3">
+          Mes{" "}
+          <span className="bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent animate-gradient">
+            Performances
+          </span>
+        </h2>
 
 
         <p className="text-gray-300 mb-12 max-w-2xl mx-auto">

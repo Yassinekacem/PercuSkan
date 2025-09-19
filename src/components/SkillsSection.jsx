@@ -38,12 +38,12 @@ export const SkillsSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-gray-900/90 -z-10 backdrop-blur-sm" />
 
       <div className="container mx-auto max-w-5xl relative z-10">
-     <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-center">
-  Mes{" "}
-  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
-    Instruments
-  </span>
-</h2>
+   <h2 className="text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-3">
+          Mes{" "}
+          <span className="bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent animate-gradient">
+            Instruments
+          </span>
+        </h2>
 <p className="text-gray-300 mb-12 max-w-2xl mx-auto text-center">
   Découvrez les instruments traditionnels et modernes qui façonnent mon identité musicale.
 </p>
