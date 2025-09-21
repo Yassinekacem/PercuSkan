@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { motion, AnimatePresence } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { MusicBackground } from "./MusicBackground";
 import { X, MapPin, Calendar, Music } from "lucide-react";
 
 // Données des voyages enrichies
 const travels = [ 
-    {
+  {
     id: 2,
     country: "Tanzanie",
     flag: "/flag/zanzibar.png",
@@ -23,8 +22,7 @@ const travels = [
     ],
     images: [
       "/voyages/zanzibar/1.2.jpg",
-            "/voyages/zanzibar/1.jpg",
-
+      "/voyages/zanzibar/1.jpg",
       "/voyages/zanzibar/1.3.jpg",
       "/voyages/zanzibar/2.jpg",
       "/voyages/zanzibar/3.jpg",
@@ -34,8 +32,6 @@ const travels = [
       "/voyages/zanzibar/7.jpg"
     ],
   },
-
-
   {
     id: 3,
     country: "Italie",
@@ -57,7 +53,7 @@ const travels = [
       "/voyages/italie/6.jpg"
     ],
   }, 
-    {
+  {
     id: 1,
     country: "Sénégal",
     flag: "/flag/senegal.png",
@@ -83,6 +79,46 @@ const travels = [
 export const TravelsSection = () => {
   const [selectedTravel, setSelectedTravel] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const modalRef = useRef(null);
+
+  // Gestion du défilement de la page et de la navbar quand la modal est ouverte
+  useEffect(() => {
+    if (selectedTravel) {
+      // Bloquer le défilement
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+      
+      // Masquer la navbar
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        navbar.style.display = 'none';
+      }
+    } else {
+      // Restaurer le défilement
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = 'unset';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      
+      // Afficher à nouveau la navbar
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        navbar.style.display = 'flex';
+      }
+    }
+    
+    return () => {
+      // Nettoyage pour s'assurer que la navbar est réaffichée
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        navbar.style.display = 'flex';
+      }
+    };
+  }, [selectedTravel]);
 
   const openModal = useCallback((id) => {
     setSelectedTravel(id);
@@ -93,6 +129,23 @@ export const TravelsSection = () => {
     setSelectedTravel(null);
     setCurrentSlide(0);
   }, []);
+
+  // Fermer la modal en cliquant à l'extérieur
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+      }
+    };
+
+    if (selectedTravel) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [selectedTravel, closeModal]);
 
   const currentTravel = travels.find((t) => t.id === selectedTravel);
 
@@ -114,18 +167,16 @@ export const TravelsSection = () => {
 
   return (
     <section id="travels" className="py-24 px-4 relative min-h-screen flex items-center overflow-hidden bg-black text-white">
-      <MusicBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-gray-900/90 -z-10 backdrop-blur-sm" />
 
       <div className="container mx-auto max-w-6xl text-center relative z-10">
-  <h2 className="text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-3">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-3">
           Escales{" "}
           <span className="bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent animate-gradient">
             Musicales
           </span>
         </h2>
 
-        
         <motion.p 
           className="text-gray-300 mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -173,20 +224,18 @@ export const TravelsSection = () => {
         {/* Modal amélioré */}
         <AnimatePresence>
           {selectedTravel && currentTravel && (
-            <div
-              className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
-              onClick={closeModal}
-            >
+            <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
               <motion.div
+                ref={modalRef}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="bg-gray-900/95 backdrop-blur-xl rounded-2xl relative max-w-5xl w-full max-h-[90vh] overflow-hidden border border-cyan-400/20"
-                onClick={(e) => e.stopPropagation()}
               >
+                {/* Bouton de fermeture */}
                 <button
-                  className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-red-500/20 hover:bg-red-500/30 text-white transition-all duration-300 group"
+                  className="absolute top-4 right-4 z-60 w-10 h-10 flex items-center justify-center rounded-full bg-red-500/20 hover:bg-red-500/30 text-white transition-all duration-300 group"
                   onClick={closeModal}
                   aria-label="Fermer la modal"
                 >
@@ -196,43 +245,42 @@ export const TravelsSection = () => {
                 <div className="flex flex-col lg:flex-row h-full">
                   {/* Partie Carousel */}
                   <div className="lg:w-2/3 relative">
-              <Carousel
-  showArrows
-  showIndicators
-  showThumbs
-  infiniteLoop
-  autoPlay={false}
-  showStatus={false}
-  emulateTouch
-  selectedItem={currentSlide}
-  onChange={setCurrentSlide}
-  renderThumbs={() =>
-    currentTravel.images.map((image, idx) => (
-      <div key={idx} className="h-16 overflow-hidden">
-        <img
-          src={image}
-          alt={`Thumbnail ${idx + 1}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    ))
-  }
->
-  {currentTravel.images.map((image, idx) => (
-    <div key={idx} className="flex justify-center">
-      <img
-        src={image}
-        alt={`${currentTravel.country} ${idx + 1}`}
-        className="max-h-[80vh] w-auto object-contain"
-      />
-    </div>
-  ))}
-</Carousel>
-
+                    <Carousel
+                      showArrows
+                      showIndicators
+                      showThumbs
+                      infiniteLoop
+                      autoPlay={false}
+                      showStatus={false}
+                      emulateTouch
+                      selectedItem={currentSlide}
+                      onChange={setCurrentSlide}
+                      renderThumbs={() =>
+                        currentTravel.images.map((image, idx) => (
+                          <div key={idx} className="h-16 overflow-hidden">
+                            <img
+                              src={image}
+                              alt={`Thumbnail ${idx + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))
+                      }
+                    >
+                      {currentTravel.images.map((image, idx) => (
+                        <div key={idx} className="h-[50vh] md:h-[60vh] flex justify-center items-center bg-black">
+                          <img
+                            src={image}
+                            alt={`${currentTravel.country} ${idx + 1}`}
+                            className="max-h-full max-w-full object-contain"
+                          />
+                        </div>
+                      ))}
+                    </Carousel>
                   </div>
 
                   {/* Partie Description */}
-                  <div className="lg:w-1/3 p-6 overflow-y-auto">
+                  <div className="lg:w-1/3 p-6 overflow-y-auto max-h-[60vh] lg:max-h-[80vh]">
                     <div className="flex items-center gap-3 mb-4">
                       <img
                         src={currentTravel.flag}
