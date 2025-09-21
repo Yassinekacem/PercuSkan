@@ -17,58 +17,64 @@ export const MusicBackground = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const generateParticles = () => {
-    const count = Math.floor((window.innerWidth * window.innerHeight) / 60000);
-    const newParticles = Array.from({ length: count }, (_, i) => ({
+const generateParticles = () => {
+  const count = Math.floor((window.innerWidth * window.innerHeight) / 70000);
+  const newParticles = Array.from({ length: count }, (_, i) => {
+    const isOrange = Math.random() < 0.4; // 40% de particules oranges
+    return {
       id: i,
       size: Math.random() * 40 + 10,
       x: Math.random() * 100,
       y: Math.random() * 100,
       opacity: Math.random() * 0.25 + 0.15,
       duration: Math.random() * 12 + 6,
-      color: `rgba(56, 189, 248, ${Math.random() * 0.3 + 0.2})`, // cyan
+      color: isOrange
+        ? `rgba(249, 115, 22, ${Math.random() * 0.3 + 0.2})` // orange-500
+        : `rgba(56, 189, 248, ${Math.random() * 0.3 + 0.2})`, // cyan-400
       blur: Math.random() * 8 + 4,
-    }));
-    setParticles(newParticles);
-  };
+    };
+  });
+  setParticles(newParticles);
+};
 
-  const generatePercussionIcons = () => {
-    const count = Math.floor((window.innerWidth * window.innerHeight) / 20000);
-    const newIcons = Array.from({ length: count }, (_, i) => {
-      const iconType = Math.floor(Math.random() * 2);
-      const icons = ['♪', '♫'];
-      const beatPattern = iconType === 0 ? 'dum' : 'tek';
-      
-      // Couleurs différentes selon le type d'icône
-      const colors = beatPattern === 'dum' 
+const generatePercussionIcons = () => {
+  const count = Math.floor((window.innerWidth * window.innerHeight) / 45000);
+  const newIcons = Array.from({ length: count }, (_, i) => {
+    // Plus de chances pour tek (orange)
+    const iconType = Math.random() < 0.6 ? 1 : 0; // 60% tek, 40% dum
+    const icons = ['♪', '♫'];
+    const beatPattern = iconType === 0 ? 'dum' : 'tek';
+
+    const colors =
+      beatPattern === 'dum'
         ? [
             'rgba(56, 189, 248, 0.4)', // cyan-400
             'rgba(14, 165, 233, 0.4)', // sky-500
             'rgba(2, 132, 199, 0.4)',  // blue-600
-            'rgba(3, 105, 161, 0.4)'   // blue-700
           ]
         : [
-            'rgba(249, 115, 22, 0.4)', // orange-500
-            'rgba(251, 146, 60, 0.4)', // orange-400
-            'rgba(234, 88, 12, 0.4)',  // orange-600
-            'rgba(194, 65, 12, 0.4)'   // orange-700
+            'rgba(249, 115, 22, 0.5)', // orange-500
+            'rgba(251, 146, 60, 0.45)', // orange-400
+            'rgba(234, 88, 12, 0.5)',  // orange-600
           ];
-      
-      return {
-        id: i,
-        icon: icons[iconType],
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        opacity: Math.random() * 0.2 + 0.1,
-        duration: Math.random() * 8 + 4,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        size: Math.random() * 16 + 12,
-        delay: Math.random() * 2,
-        beatPattern: beatPattern
-      };
-    });
-    setPercussionIcons(newIcons);
-  };
+
+    return {
+      id: i,
+      icon: icons[iconType],
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      opacity: Math.random() * 0.25 + 0.15,
+      duration: Math.random() * 8 + 4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      size: Math.random() * 16 + 12,
+      delay: Math.random() * 2,
+      beatPattern,
+    };
+  });
+  setPercussionIcons(newIcons);
+};
+
+
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">

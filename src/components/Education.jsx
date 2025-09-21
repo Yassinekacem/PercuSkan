@@ -27,9 +27,8 @@ export const Education = () => {
       id="education"
       className="py-24 px-4 relative min-h-screen flex items-center overflow-hidden bg-black text-white"
     >
-      {/* Background musical simplifié avec éléments de percussion */}
+      {/* Background musical simplifié */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        {/* Pattern de notes de musique subtiles */}
         <div className="absolute inset-0 opacity-[0.05]">
           <div className="absolute top-10 left-10">♩</div>
           <div className="absolute top-20 right-20">♪</div>
@@ -37,42 +36,17 @@ export const Education = () => {
           <div className="absolute bottom-10 right-10">♬</div>
         </div>
 
-        {/* Éléments de percussion animés */}
-        <div className="absolute top-1/4 left-1/5 animate-bounce-slow">
-          <div className="w-3 h-3 rounded-full bg-blue-500/20"></div>
-        </div>
-        <div className="absolute top-1/3 right-1/4 animate-bounce-medium">
-          <div className="w-4 h-4 rounded-full bg-orange-500/20"></div>
-        </div>
-        <div className="absolute bottom-1/4 left-1/3 animate-bounce-fast">
-          <div className="w-2 h-2 rounded-full bg-blue-400/20"></div>
-        </div>
-        <div className="absolute top-1/5 right-1/5 animate-bounce-fast">
-          <div className="w-4 h-4 rounded-full bg-orange-500/20"></div>
-        </div>
+        {/* Percussion animées */}
+        <div className="absolute top-1/4 left-1/5 animate-bounce-slow w-3 h-3 rounded-full bg-blue-500/20"></div>
+        <div className="absolute top-1/3 right-1/4 animate-bounce-medium w-4 h-4 rounded-full bg-orange-500/20"></div>
+        <div className="absolute bottom-1/4 left-1/3 animate-bounce-fast w-2 h-2 rounded-full bg-blue-400/20"></div>
+        <div className="absolute top-1/5 right-1/5 animate-bounce-fast w-4 h-4 rounded-full bg-orange-500/20"></div>
 
-        {/* Cercles concentriques pour évoquer les ondes sonores */}
+        {/* Cercles concentriques */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="absolute w-64 h-64 rounded-full border border-blue-500/10 animate-pulse-slow"></div>
           <div className="absolute w-96 h-96 rounded-full border border-orange-500/10 animate-pulse-medium"></div>
         </div>
-
-        {/* Lignes rythmiques */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 opacity-10">
-          <div className="flex justify-between items-end h-full px-10">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className={`bg-blue-400 ${i % 4 === 0 ? 'h-10 w-1' : 'h-5 w-0.5'} animate-rhythm`}
-                style={{ animationDelay: `${i * 0.1}s` }}
-              ></div>
-            ))}
-          </div>
-        </div>
-
-        {/* Formes abstraites de percussions */}
-        <div className="absolute top-20 left-20 w-40 h-40 rounded-full border-2 border-orange-500/10 animate-ping-slow"></div>
-        <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full border-2 border-blue-500/10 animate-ping-medium"></div>
       </div>
 
       {/* Overlay sombre */}
@@ -80,7 +54,7 @@ export const Education = () => {
 
       <div className="container mx-auto max-w-5xl text-center relative z-10">
         {/* Titre */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 flex items-center justify-center gap-3">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 flex flex-col md:flex-row items-center justify-center gap-3">
           Mon{" "}
           <span className="bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent animate-gradient">
             Éducation
@@ -93,11 +67,11 @@ export const Education = () => {
         </p>
 
         {/* Cartes */}
-        <div className="space-y-8">
+        <div className="flex flex-col md:flex-row md:flex-wrap gap-6 justify-center">
           {educationData.map((edu, i) => (
             <div
               key={i}
-              className="flex items-start gap-6 bg-white/5 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-blue-400/30 transition-all duration-300 animate-fade-in-up hover:scale-[1.02]"
+              className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 bg-white/5 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-blue-400/30 transition-all duration-300 animate-fade-in-up hover:scale-[1.02] w-full md:w-[48%]"
               style={{ animationDelay: `${i * 0.2}s` }}
             >
               {/* Logo */}
@@ -105,21 +79,19 @@ export const Education = () => {
                 <img
                   src={edu.logo}
                   alt={edu.schoolFr}
-                  width={edu.schoolFr.includes("Institut Supérieur de Musique") ? 95 : 82}
-                  height={edu.schoolFr.includes("Institut Supérieur de Musique") ? 100 : 82}
-                  className="object-cover rounded-full border-2 border-blue-400 shadow-md"
+                  className="object-cover rounded-full border-2 border-blue-400 shadow-md w-20 h-20 md:w-24 md:h-24"
                 />
               </div>
 
               {/* Contenu texte */}
               <div className="text-left flex-1">
-                <h3 className="text-xl font-semibold text-white mb-1">
+                <h3 className="text-lg md:text-xl font-semibold text-white mb-1">
                   {edu.degreeFr}
                 </h3>
-                <p className="text-blue-400 font-medium text-base mb-1">
+                <p className="text-blue-400 font-medium text-sm md:text-base mb-1">
                   {edu.schoolFr}
                 </p>
-                <p className="text-sm">{edu.period}</p>
+                <p className="text-xs md:text-sm">{edu.period}</p>
               </div>
             </div>
           ))}
@@ -128,100 +100,32 @@ export const Education = () => {
 
       {/* Styles */}
       <style>{`
-        /* Animation dégradé titre */
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
         @keyframes gradient {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
+        .animate-fade-in-up {
+          animation: fadeInUp 0.8s ease forwards;
         }
-
-        /* Animation apparition */
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* Animations pour le background musical */
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-15px); }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 5s ease-in-out infinite;
-        }
-        
-        @keyframes bounce-medium {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-bounce-medium {
-          animation: bounce-medium 3s ease-in-out infinite;
-        }
-        
-        @keyframes bounce-fast {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-        .animate-bounce-fast {
-          animation: bounce-fast 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.1; transform: scale(1); }
-          50% { opacity: 0.2; transform: scale(1.05); }
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 6s ease-in-out infinite;
-        }
-        
-        @keyframes pulse-medium {
-          0%, 100% { opacity: 0.1; transform: scale(1); }
-          50% { opacity: 0.2; transform: scale(1.03); }
-        }
-        .animate-pulse-medium {
-          animation: pulse-medium 4s ease-in-out infinite;
-        }
-        
-        @keyframes pulse-fast {
-          0%, 100% { opacity: 0.1; transform: scale(1); }
-          50% { opacity: 0.2; transform: scale(1.02); }
-        }
-        .animate-pulse-fast {
-          animation: pulse-fast 2s ease-in-out infinite;
-        }
-
-        @keyframes rhythm {
-          0%, 100% { opacity: 0.1; }
-          50% { opacity: 0.3; }
-        }
-        .animate-rhythm {
-          animation: rhythm 0.5s ease-in-out infinite;
-        }
-
-        @keyframes ping-slow {
-          0% { transform: scale(1); opacity: 0.1; }
-          50% { transform: scale(1.1); opacity: 0.2; }
-          100% { transform: scale(1.2); opacity: 0; }
-        }
-        .animate-ping-slow {
-          animation: ping-slow 4s ease-out infinite;
-        }
-
-        @keyframes ping-medium {
-          0% { transform: scale(1); opacity: 0.1; }
-          50% { transform: scale(1.05); opacity: 0.15; }
-          100% { transform: scale(1.1); opacity: 0; }
-        }
-        .animate-ping-medium {
-          animation: ping-medium 3s ease-out infinite;
-        }
+        .animate-bounce-slow { animation: bounce-slow 5s ease-in-out infinite; }
+        .animate-bounce-medium { animation: bounce-medium 3s ease-in-out infinite; }
+        .animate-bounce-fast { animation: bounce-fast 2s ease-in-out infinite; }
+        @keyframes bounce-slow { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
+        @keyframes bounce-medium { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+        @keyframes bounce-fast { 0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);} }
+        .animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
+        .animate-pulse-medium { animation: pulse-medium 4s ease-in-out infinite; }
+        @keyframes pulse-slow {0%,100%{opacity:0.1;transform:scale(1);}50%{opacity:0.2;transform:scale(1.05);} }
+        @keyframes pulse-medium {0%,100%{opacity:0.1;transform:scale(1);}50%{opacity:0.2;transform:scale(1.03);} }
       `}</style>
     </section>
   );
