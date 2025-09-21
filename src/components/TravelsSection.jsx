@@ -80,10 +80,17 @@ export const TravelsSection = () => {
   const [selectedTravel, setSelectedTravel] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const modalRef = useRef(null);
+  const sectionRef = useRef(null);
 
   // Gestion du défilement de la page et de la navbar quand la modal est ouverte
   useEffect(() => {
     if (selectedTravel) {
+      // Sauvegarder la position actuelle de la section
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        sessionStorage.setItem('travelsSectionPosition', String(rect.top + window.scrollY));
+      }
+      
       // Bloquer le défilement
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
@@ -102,7 +109,19 @@ export const TravelsSection = () => {
       document.body.style.position = '';
       document.body.style.width = '';
       document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      
+      // Restaurer la position de la section travels
+      const savedPosition = sessionStorage.getItem('travelsSectionPosition');
+      if (savedPosition) {
+        window.scrollTo(0, parseInt(savedPosition));
+        sessionStorage.removeItem('travelsSectionPosition');
+      } else {
+        // Fallback: scroll to travels section
+        window.scrollTo(0, 0);
+        if (window.location.hash !== '#travels') {
+          window.history.replaceState(null, '', '#travels');
+        }
+      }
       
       // Afficher à nouveau la navbar
       const navbar = document.querySelector('nav');
@@ -166,7 +185,7 @@ export const TravelsSection = () => {
   };
 
   return (
-    <section id="travels" className="py-24 px-4 relative min-h-screen flex items-center overflow-hidden bg-black text-white">
+    <section id="travels" ref={sectionRef} className="py-24 px-4 relative min-h-screen flex items-center overflow-hidden bg-black text-white">
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-gray-900/90 -z-10 backdrop-blur-sm" />
 
       <div className="container mx-auto max-w-6xl text-center relative z-10">
@@ -334,7 +353,7 @@ export const TravelsSection = () => {
         </AnimatePresence>
       </div>
 
-      <style>{`
+      <style jsx>{`
         @keyframes gradient {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
